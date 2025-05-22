@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Reset some basic styles */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        main {
+            padding: 50px 0;
+            margin-top: 0;
+        }
+
+        .about-us h2,
+        .about-us h3 {
+            color: #040507;
+        }
+
+        .about-us p,
+        .about-us ul {
+            margin-bottom: 20px;
+        }
+
+        .about-us ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #666363;
+            color: #010101;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <main>
+        <section class="about-us">
+            <div class="container">
+                <h2>Welcome to myBus</h2>
+                <p>myBus is India’s largest online bus ticketing platform that has transformed bus travel in the
+                    country by bringing ease and convenience to millions of Indians who travel using buses. At myBus, we
+                    are dedicated to transforming the way you travel. Our mission is to make bus travel
+                    seamless, convenient, and accessible to everyone. Whether you're commuting to work, visiting family,
+                    or exploring new destinations, we aim to ensure your journey is as smooth as possible.</p>
+
+                <h3>Our Story</h3>
+                <p>Founded in 2024, myBus was born out of a simple yet ambitious idea: to create a reliable and
+                    user-friendly platform where travelers could easily book bus tickets anytime, anywhere. What started
+                    as a small team with a passion for travel and technology has grown into one of the leading bus
+                    booking platforms in Rajasthan.</p>
+
+                <h3>Our Mission</h3>
+                <p>To make bus travel simple, accessible, and enjoyable. We strive to offer a seamless booking
+                    experience, competitive pricing, and world-class customer service. We are committed to constantly
+                    improving our platform to ensure that travelers have the best experience every time they book with
+                    us.</p>
+
+                <h3>What Sets Us Apart</h3>
+                <ul>
+                    <li>Wide Selection of Routes & Operators</li>
+                    <li>Easy-to-Use Platform</li>
+                    <li>Best Prices & Offers</li>
+                    <li>Reliable & Trusted</li>
+                </ul>
+
+                <h3>Our Vision</h3>
+                <p>To be the go-to platform for bus travel, setting new standards of convenience, affordability, and
+                    reliability. We aim to expand our reach, enhance our offerings, and continue revolutionizing the way
+                    people travel.</p>
+
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li>24/7 Customer Support</li>
+                    <li>Secure & Reliable Payment Options</li>
+                    <li>Transparent Information</li>
+                </ul>
+
+                <h3>Our Values</h3>
+                <ul>
+                    <li>Integrity</li>
+                    <li>Customer First</li>
+                    <li>Innovation</li>
+                    <li>Sustainability</li>
+                </ul>
+
+                <h3>Join Us on Your Next Adventure</h3>
+                <p>Whether you’re planning a short trip or a long journey, [Your Website Name] is here to make your
+                    travel simple, affordable, and enjoyable. Book your next bus ticket with us and experience
+                    hassle-free travel like never before!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 [Your Website Name]. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+</script>

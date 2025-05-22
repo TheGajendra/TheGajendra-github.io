@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Gajendra Singh</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #64ffda;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #8892b0;
+      margin: 5px 0;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+      animation-delay: 1s;
+    }
+
+    .social-links a {
+      color: #64ffda;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #566b94;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Get in Touch</h1>
+
+  <div class="contact-info">
+    <p>Email: gs9668906@gmail.com</p>
+    <p>Location: Chittorgarh, Rajasthan</p>
+    <p>Open to freelance & collaboration</p>
+  </div>
+
+  <div class="social-links">
+    <a href="https://github.com/TheGajendra" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/gajendra-singh-832786284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/gajju_banna_rj09?igsh=ZjA3ZzJseGFjcXJq" target="_blank">Instagram</a>
+  </div>
+
+  <footer>&copy; 2025 Gajendra Singh • Portfolio</footer>
+
+  <script>
+    // Smooth fade-ins handled by CSS animations
+    // You can add scroll reveal or interactive effects here if needed
+  </script>
+
+</body>
+</html>

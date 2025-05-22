@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <h1>Book Your Ticket</h1>
+        <form onsubmit="searchBuses(event)">
+            <div>
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from" placeholder="Enter starting location" required>
+            </div>
+            <div>
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to" placeholder="Enter destination" required>
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div>
+                <button type="submit">Search Buses</button>
+            </div>
+        </form>
+
+        <div class="seating-section" id="seatingSection" style="display:none;">
+            <h2>Seats Available for <span id="route"></span></h2>
+            <div class="seating-grid">
+                <div class="seat" onclick="toggleSeat(this)">1</div>
+                <div class="seat" onclick="toggleSeat(this)">2</div>
+                <div class="seat" onclick="toggleSeat(this)">3</div>
+                <div class="seat" onclick="toggleSeat(this)">4</div>
+                <div class="seat" onclick="toggleSeat(this)">5</div>
+                <div class="seat" onclick="toggleSeat(this)">6</div>
+                <div class="seat" onclick="toggleSeat(this)">7</div>
+                <div class="seat" onclick="toggleSeat(this)">8</div>
+                <div class="seat" onclick="toggleSeat(this)">9</div>
+                <div class="seat" onclick="toggleSeat(this)">10</div>
+                <div class="seat" onclick="toggleSeat(this)">11</div>
+                <div class="seat" onclick="toggleSeat(this)">12</div>
+                <div class="seat" onclick="toggleSeat(this)">13</div>
+                <div class="seat" onclick="toggleSeat(this)">14</div>
+                <div class="seat" onclick="toggleSeat(this)">15</div>
+                <div class="seat" onclick="toggleSeat(this)">16</div>
+                <div class="seat" onclick="toggleSeat(this)">17</div>
+                <div class="seat" onclick="toggleSeat(this)">18</div>
+                <div class="seat" onclick="toggleSeat(this)">19</div>
+                <div class="seat" onclick="toggleSeat(this)">20</div>
+            </div>
+        </div>
+
+        <button type="button" onclick="confirmBooking()" style="display:none; margin-top: 20px;" id="confirmButton">Confirm Booking</button>
+
+        <div class="payment-section" id="paymentSection" style="display:none; margin-top: 20px;">
+            <h3>Payment Method</h3>
+            <form id="paymentForm" onsubmit="processPayment(event)">
+                <label for="paymentMethod">Select Payment Method:</label>
+                <select id="paymentMethod" required>
+                    <option value="">--Select--</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="Net Banking">Net Banking</option>
+                    <option value="UPI">UPI</option>
+                </select>
+                <label for="cardNumber" id="cardDetails" style="display:none;">Card Number:</label>
+                <input type="text" id="cardNumber" placeholder="Enter Card Number" style="display:none;" maxlength="16">
+                <button type="submit">Proceed to Pay</button>
+            </form>
+        </div>
+
+        <div class="payment-receipt" id="paymentReceipt" style="display:none; margin-top: 20px;">
+            <h3>Payment Receipt</h3>
+            <p><strong>Receipt Number:</strong> <span id="receiptNumber"></span></p>
+            <p><strong>Route:</strong> <span id="receiptRoute"></span></p>
+            <p><strong>Date:</strong> <span id="receiptDate"></span></p>
+            <p><strong>Seats:</strong> <span id="receiptSeats"></span></p>
+            <p><strong>Payment Method:</strong> <span id="receiptMethod"></span></p>
+            <p><strong>Amount Paid:</strong> <span id="receiptAmount"></span></p>
+            
+        </div>
+    </div>
+
+    <script>
+        function searchBuses(event) {
+            event.preventDefault();
+
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const date = document.getElementById('date').value;
+
+            if (from && to && date) {
+                document.getElementById('route').textContent = `${from} to ${to}`;
+                document.getElementById('seatingSection').style.display = 'block';
+                document.getElementById('confirmButton').style.display = 'block';
+            }
+        }
+
+        function toggleSeat(seat) {
+            seat.classList.toggle('selected');
+        }
+
+        function confirmBooking() {
+            const selectedSeats = Array.from(document.querySelectorAll('.seat.selected'))
+                .map(seat => seat.textContent);
+
+            if (selectedSeats.length === 0) {
+                alert('Please select at least one seat.');
+                return;
+            }
+
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const date = document.getElementById('date').value;
+
+            // Store ticket details
+            document.getElementById('receiptRoute').textContent = `${from} to ${to}`;
+            document.getElementById('receiptDate').textContent = date;
+            document.getElementById('receiptSeats').textContent = selectedSeats.join(', ');
+
+            // Hide seating section and show payment section
+            document.getElementById('seatingSection').style.display = 'none';
+            document.getElementById('confirmButton').style.display = 'none';
+            document.getElementById('paymentSection').style.display = 'block';
+        }
+
+        function processPayment(event) {
+            event.preventDefault();
+
+            const method = document.getElementById("paymentMethod").value;
+            if (!method) {
+                alert("Please select a payment method.");
+                return;
+            }
+
+            // Generate a random receipt number
+            const receiptNumber = `R-${Math.floor(Math.random() * 1000000) + 1}`;
+            const amountPaid = "₹500"; // Example amount; this can be dynamic
+
+            // Populate receipt details
+            document.getElementById("receiptNumber").textContent = receiptNumber;
+            document.getElementById("receiptMethod").textContent = method;
+            document.getElementById("receiptAmount").textContent = amountPaid;
+
+            // Show the receipt and hide payment section
+            document.getElementById("paymentSection").style.display = "none";
+            document.getElementById("paymentReceipt").style.display = "block";
+
+            alert(`Payment successful using ${method}.`);
+        }
+
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

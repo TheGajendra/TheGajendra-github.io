@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register & Login</title>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: rgba(125, 71, 6, 0.377);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(55, 10, 10);
+    }
+
+    .container {
+      background-color: rgb(249, 255, 255);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 4px 30px rgba(179, 66, 201, 0.11);
+      text-align: center;
+      width: 350px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .container h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      margin: 15px 0;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      color: rgb(10, 8, 8);
+      font-size: 1em;
+    }
+
+    .form-control::placeholder {
+      color: #080808;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #ff010133;
+      box-shadow: 0 0 5px #4e0202;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #670f27;
+      color: white;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #16b7b7;
+      transform: scale(1.05);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .toggle {
+      margin-top: 20px;
+      font-size: 0.9em;
+      cursor: pointer;
+      color: #670f27;
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Registration Form -->
+    <div id="register-form">
+      <h1>Register</h1>
+      <form onsubmit="handleRegister(event)">
+        <input type="text" class="form-control" name="username" placeholder="Username" required />
+        <input type="email" class="form-control" name="email" placeholder="Email" required />
+        <input type="password" class="form-control" name="password" placeholder="Password" required />
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p class="toggle" onclick="toggleForms()">Already have an account? Login here.</p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="hidden">
+      <h1>Login</h1>
+      <form onsubmit="handleLogin(event)">
+        <input type="text" class="form-control" name="username" placeholder="Username/Email" required />
+        <input type="password" class="form-control" name="password" placeholder="Password" required />
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p class="toggle" onclick="toggleForms()">Don't have an account? Register here.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      document.getElementById('register-form').classList.toggle('hidden');
+      document.getElementById('login-form').classList.toggle('hidden');
+    }
+
+    function handleRegister(event) {
+      event.preventDefault();
+      alert("Registration submitted! (No backend connected)");
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      alert("Login submitted! (No backend connected)");
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earbuds Paradise</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer"></script>
+</head>
+
+<body>
+  <header>
+    <h1 onclick="window.open('about.html')" style="cursor: pointer;">Earbuds Paradise</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html"><img src="hom.png" alt="Home" width="30" /></a></li>
+        <li><a href="#products"><img src="icons8-earbud-headphones-80.png" alt="Products" width="30" /></a></li>
+        <li><a href="contact.html"><img src="icons8-contact-us-50.png" alt="Contact" width="30" /></a></li>
+        <li class="cart" onclick="toggleCart()">
+          <img src="cart11.png" alt="Cart" width="30" />
+          <span class="cart-count">0</span>
+        </li>
+        <li><a href="about.html"><img src="icons8-about-us-80.png" alt="About" width="30" /></a></li>
+        <!-- Static login/logout link - replace with logic if needed -->
+        <li><a href="login.html"><img src="icons8-login-64.png" alt="Login" width="30" /></a></li>
+        <!-- <li><a href="logout.php"><img src="logout.png" alt="Logout" width="30" /></a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <div class="cart-details" id="cartDetails">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <a href="payment.html" class="checkout">Checkout</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Experience True Sound</h1>
+      <p>Immerse yourself in the best audio technology.</p>
+      <button onclick="location.href='#products'">Explore Now</button>
+    </div>
+  </section>
+
+  <model-viewer 
+    src="product1.png" 
+    alt="3D Headphone" 
+    auto-rotate 
+    camera-controls 
+    background-color="#000000">
+  </model-viewer>
+
+  <section class="featured-product">
+    <img src="product5.png" alt="Featured Earbuds" />
+    <div class="specifications">
+      <div class="spec"><span>Wireless</span></div>
+      <div class="spec"><span>Long Battery</span></div>
+      <div class="spec"><span>Noise Cancellation</span></div>
+      <div class="spec"><span>PX7-rated for protection</span></div>
+      <div class="spec"><span>Ergonomic Fit</span></div>
+      <div class="spec"><span>150 Hours Life</span></div>
+    </div>
+  </section>
+
+  <section class="featured-product">
+    <img src="product4.png" alt="Featured Earbuds" style="margin-left: 200px;" />
+    <div class="specifications" style="margin-right: 150px;">
+      <div class="spec"><span>Wireless</span></div>
+      <div class="spec"><span>Long Battery</span></div>
+      <div class="spec"><span>Noise Cancellation</span></div>
+      <div class="spec"><span>Waterproof Design</span></div>
+      <div class="spec"><span>Ergonomic Fit</span></div>
+      <div class="spec"><span>200 Hours Life</span></div>
+    </div>
+  </section>
+
+  <section id="products">
+        <h2 style="font-size: 40px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Our Products</h2>
+        <div class="products" id="productsList">
+            <div class="product" data-name="Model 1" data-price="2999" data-desc="High-quality sound with active noise cancellation." data-img="product1.png">
+                <img src="product1.png" alt="Earbuds Model 1" onclick="showPopup(this.parentElement)">
+                <h3>Model 1</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹2999</strong></p>
+                <button onclick="addToCart('Model 1', 2999)" class="btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Model 2" data-price="1999" data-desc="High-quality sound with active noise cancellation." data-img="vecteezy_headphone-audio-3d-concept_45051174.png">
+                <img src="vecteezy_headphone-audio-3d-concept_45051174.png" alt="Earbuds Model 2" onclick="showPopup(this.parentElement)">
+                <h3>Model 2</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹1999</strong></p>
+                <button onclick="addToCart('Model 2', 1999)" class="btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Model 8" data-price="4999" data-desc="High-quality sound with active noise cancellation." data-img="product2.png">
+                <img src="product2.png" alt="Earbuds Model 8" onclick="showPopup(this.parentElement)">
+                <h3>Model 8</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹4999</strong></p>
+                <button onclick="addToCart('Model 8', 4999)" class="btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Model 3" data-price="3999" data-desc="High-quality sound with active noise cancellation." data-img="product3.png">
+                <img src="product3.png" alt="Earbuds Model 3" onclick="showPopup(this.parentElement)">
+                <h3>Model 3</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹3999</strong></p>
+                <button onclick="addToCart('Model 3', 3999)" class="btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Model 4" data-price="999" data-desc="High-quality sound with active noise cancellation." data-img="product6.png">
+                <img src="product6.png" alt="Earbuds Model 4">
+                <h3>Model 4</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹999</strong></p>
+                <button onclick="addToCart('Model 4', 999)" class="btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Model 5" data-price="3999" data-desc="High-quality sound with active noise cancellation." data-img="product7.png">
+                <img src="product7.png" alt="Earbuds Model 5" onclick="showPopup(this.parentElement)">
+                <h3>Model 5</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹3999</strong></p>
+                <button onclick="addToCart('Model 5', 3999)" class="btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Model 6" data-price="999" data-desc="High-quality sound with active noise cancellation."data-img="product8.png">
+                <img src="product8.png" alt="Earbuds Model 6" onclick="showPopup(this.parentElement)">
+                <h3>Model 6</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹999</strong></p>
+                <button onclick="addToCart('Model 6', 999)" class="btn">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Model 7" data-price="1999" data-desc="High-quality sound with active noise cancellation." data-img="product9.png">
+                <img src="product9.png" alt="Earbuds Model 7" onclick="showPopup(this.parentElement)">
+                <h3>Model 7</h3>
+                <p style="color: aliceblue; font-size: large;"><strong>₹1999</strong></p>
+                <button onclick="addToCart('Model 7', 1999)" class="btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+  <section class="discount section">
+    <div class="discount__container container grid">
+      <div class="discount__animate">
+        <h2 class="discount__title">Immerse yourself in your music</h2>
+        <p class="discount__description">Get it now, up to 50% off.</p>
+        <a href="#products" class="button button--flex" style="margin-right: 300px; gap: 20px;">Shop Now</a>
+      </div>
+      <img src="discount.png" alt="" class="discount__img" />
+    </div>
+  </section>
+
+  <div class="popup" id="popup">
+    <span class="close" onclick="hidePopup()">&times;</span>
+    <div class="popup-content">
+      <img id="popupimg" src="" alt="Product Image" />
+      <div class="popup-text">
+        <h3 id="popupTitle"></h3>
+        <p id="popupDesc"></p>
+        <p id="popupPrice"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Earbuds Paradise</h3>
+          <p>Your ultimate destination for premium earphones and earbuds.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <ul class="social-icons">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Earbuds Paradise. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

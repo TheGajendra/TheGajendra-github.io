@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Fix</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgb(150, 107, 150);
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 98%;
+            height: 65px;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .nav-links a {
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: white;
+            left: 50%;
+            bottom: -5px;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .logo {
+          position: absolute;
+    left: 25px;
+    width: 200px;
+    height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" class="logo" alt="Logo">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div style="margin-top: 80px; padding: 20px;">
+        
+    </div>
+</body>
+</html>

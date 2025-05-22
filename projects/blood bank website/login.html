@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    }
+    .container {
+      width: 350px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      overflow: hidden;
+    }
+    .form-container {
+      position: relative;
+      width: 200%;
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .form {
+      width: 50%;
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #ff416c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff4b2b;
+    }
+    .toggle-btns {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+    .toggle-btns button {
+      width: 48%;
+      background: transparent;
+      color: black;
+      border: 2px solid #ff416c;
+    }
+    .toggle-btns button.active {
+      background: #ff416c;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="toggle-btns">
+      <button id="login-btn" class="active" onclick="toggleForm('login')">Login</button>
+      <button id="register-btn" onclick="toggleForm('register')">Register</button>
+    </div>
+    <div class="form-container" id="formContainer">
+      <form class="form" id="loginForm" onsubmit="redirectToHome(event)">
+        <h2>Login</h2>
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <form class="form" id="registerForm" onsubmit="redirectToHome(event)">
+        <h2>Register</h2>
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm(formType) {
+      const formContainer = document.getElementById('formContainer');
+      const loginBtn = document.getElementById('login-btn');
+      const registerBtn = document.getElementById('register-btn');
+
+      if (formType === 'register') {
+        formContainer.style.transform = 'translateX(-50%)';
+        registerBtn.classList.add('active');
+        loginBtn.classList.remove('active');
+      } else {
+        formContainer.style.transform = 'translateX(0)';
+        loginBtn.classList.add('active');
+        registerBtn.classList.remove('active');
+      }
+    }
+
+    function redirectToHome(e) {
+      e.preventDefault();
+      alert("Action successful! (Frontend only)");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

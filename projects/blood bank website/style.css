@@ -1,0 +1,241 @@
+:root {
+    --primary-color: #c70000;
+    --secondary-color: #ff4444;
+    --text-color: #333;
+}
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+p {
+    font-family: 'Lora', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.cta-btn{
+    padding: 10px;
+    background-color: #c70000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cta-btn:hover{
+    color: wheat;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(199, 0, 0, 0.474), rgba(199, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-1.2.1');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Sections */
+.section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    margin-top: -70px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+/* Donors Table */
+.donors-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: slideUp 1s ease;
+}
+
+.donors-table th, .donors-table td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.donors-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.donors-table tr:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.availability {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.available {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Emergency Banner */
+.emergency {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.social-links {
+    margin: 1rem 0;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: blue;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-top:hover {
+    background-color: blueviolet;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .donors-table {
+        font-size: 0.9rem;
+    }
+}
+img{
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.about-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}

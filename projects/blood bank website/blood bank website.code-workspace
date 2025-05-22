@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Blood-Bank-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Blood-Bank-master"
+	}
+}

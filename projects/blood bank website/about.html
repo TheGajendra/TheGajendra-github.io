@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - LifeStream Blood Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #b30000;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcccb;
+        }
+
+        .hero {
+            margin-top: 10px;
+            background: url('about.png') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            color: white;
+            font-size: 22px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffcccb;
+        }
+
+        footer {
+            background-color: #b30000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#mission">Our Mission</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        "Every Drop Counts – Save Lives with LifeStream"
+    </section>
+
+    <section class="section" id="mission">
+        <h2>Our Mission</h2>
+        <p>At LifeStream Blood Bank, we are dedicated to providing a safe and reliable blood supply to those in need. Our mission is to connect compassionate donors with patients, ensuring life-saving transfusions for all.</p>
+    </section>
+
+    <section class="section" id="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="staff1.jfif" alt="Dr. Emily Watson">
+                <h3>Dr. Emily Watson</h3>
+                <p>Founder & Medical Director</p>
+            </div>
+            <div class="team-member">
+                <img src="staff2.jfif" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>Operations Head</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="impact">
+        <h2>Our Impact</h2>
+        <p>Thanks to our amazing donors, we have saved thousands of lives. Join us in making a difference today.</p>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 LifeStream Blood Bank. All rights reserved.</p>
+    </footer>
+</body>
+</html>

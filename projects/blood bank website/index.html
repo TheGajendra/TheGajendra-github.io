@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeStream Blood Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#donors">Donors</a></li>
+            <li><a href="contact.html">Contact-US</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Save Lives, Donate Blood</h1>
+            <button class="cta-btn" onclick="scrollToSection('donors')">Find Donors Now</button>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <img class="image" src="p4.jpg">
+        <div class="about-content">
+          
+        </div>
+    </section>
+    <section class="section">
+        <img class="image" src="header2.jpg">
+        
+    </section>
+
+    <section class="section" id="donors">
+        <h2>Available Donors</h2>
+        <table class="donors-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Blood Group</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody id="donorList">
+                <!-- Donor data will be populated by JS -->
+            </tbody>
+        </table>
+    </section>
+
+    <div class="emergency">
+        EMERGENCY? CALL 24/7 HELPLINE: 1800-123-4567
+    </div>
+
+    <div class="scroll-top" onclick="scrollToTop()">↑</div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 LifeStream Blood Bank. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sample donor data
+        const donors = [
+            { name: "John Doe", bloodGroup: "O+", location: "New York", contact: "555-0101", available: true },
+            { name: "Jane Smith", bloodGroup: "A-", location: "Los Angeles", contact: "555-0202", available: true },
+            { name: "Mike Johnson", bloodGroup: "B+", location: "Chicago", contact: "555-0303", available: false },
+            { name: "Sarah Williams", bloodGroup: "AB+", location: "Miami", contact: "555-0404", available: true }
+        ];
+
+        // Populate donor table with clickable rows
+        function populateDonors() {
+            const tbody = document.getElementById('donorList');
+            donors.forEach((donor, index) => {
+                const row = document.createElement('tr');
+                row.onclick = function() {
+                    window.open(`donors/donor${index}.html`, '_blank');
+                };
+                row.style.cursor = "pointer";
+                row.innerHTML = `
+                    <td>${donor.name}</td>
+                    <td>${donor.bloodGroup}</td>
+                    <td>${donor.location}</td>
+                    <td>${donor.contact}</td>
+                    <td><span class="availability ${donor.available ? 'available' : ''}">
+                        ${donor.available ? 'Available' : 'Unavailable'}
+                    </span></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Scroll to top button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.querySelector('.scroll-top').style.display = 'block';
+            } else {
+                document.querySelector('.scroll-top').style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            populateDonors();
+        });
+    </script>
+</body>
+</html>
