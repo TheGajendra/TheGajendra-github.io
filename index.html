@@ -12,201 +12,339 @@
 
 <body>
 
+      <!-- Header -->
     <header>
-        <h2 style="color: #64ffda;">Gajendra Singh</h2>
-
-         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#internships">Internships</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Gajendra<span class="code">()</span></a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content" id="home">
-            <h1 class="animate__animated animate__fadeIn">Hi, I'm Gajendra Singh</h1>
-            <p>A BCA student and aspiring software engineer with a passion for web development and
-                programming. Skilled in HTML, CSS, JavaScript, PHP, and MySQL, I enjoy creating responsive and
-                user-friendly websites that blend functionality with design.</p>
-        </div>
-        <div class="hero-img">
-            <img src="photo.jpeg" alt="Gajendra Singh">
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skill-bar animate-on-scroll">
-            <h3>HTML</h3>
-            <div class="level">
-                <span data-level="95%"></span>
-            </div>
-        </div>
-        <div class="skill-bar animate-on-scroll">
-            <h3>CSS</h3>
-            <div class="level">
-                <span data-level="80%"></span>
-            </div>
-        </div>
-        <div class="skill-bar animate-on-scroll">
-            <h3>JAVASCRIPT</h3>
-            <div class="level">
-                <span data-level="50%"></span>
-            </div>
-        </div>
-        <div class="skill-bar animate-on-scroll">
-            <h3>PHP</h3>
-            <div class="level">
-                <span data-level="40%"></span>
-            </div>
-        </div>
-        <div class="skill-bar animate-on-scroll">
-            <h3>C</h3>
-            <div class="level">
-                <span data-level="70%"></span>
-            </div>
-        </div>
-        <div class="skill-bar animate-on-scroll">
-            <h3>C++</h3>
-            <div class="level">
-                <span data-level="70%"></span>
-            </div>
-        </div>
-        <div class="skill-bar animate-on-scroll">
-            <h3>JAVA</h3>
-            <div class="level">
-                <span data-level="60%"></span>
-            </div>
-        </div>
-        <!-- Add more skills similarly -->
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-image" style="background-image: url('./projects/Earbuds-Website/earbudsweb.png');">
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <div class="greeting">Hello, I'm</div>
+                    <h1>Gajendra Singh</h1>
+                    <div class="role">
+                        Aspiring <span class="highlight">Software Engineer</span> & 
+                        <span class="highlight">Full-Stack Developer</span> specializing in 
+                        AI integration and web development.
+                    </div>
+                    <p>BCA student passionate about building scalable, user-focused digital solutions. With experience across multiple internships and 20+ projects, I create meaningful applications that solve real problems.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn"><i class="fas fa-code"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <h3 class="project-title">
-                        <a href="./projects/Earbuds-Website/index.html" target="_blank">Earbuds Website</a>
-                    </h3>
-                    <p class="project-description">
-                        Earbuds Paradise is a responsive e-commerce website built to showcase and sell high-quality
-                        earbuds. It features interactive product listings, 3D model viewer integration, and a dynamic
-                        cart system using HTML, CSS, JavaScript, and PHP
-                    </p>
-                    <a href="./projects/Earbuds-Website/index.html" class="project-link">View Project</a>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-image" style="background-image: url('/projects/bus-booking/busbooking.png');"></div>
-                <div class="project-content">
-                    <h3 class="project-title">
-                        <a href="/projects/bus-booking/index.html" target="_blank">Bus Booking Website</a>
-                    </h3>
-                    <p class="project-description">
-                        A modern and responsive login and registration interface designed for a bus ticket booking
-                        platform. Built using HTML, CSS, and JavaScript, this UI features smooth form toggling,
-                        client-side validation prompts, and an elegant animated layout suitable for showcasing frontend
-                        skills.
-                    </p>
-                    <a href="/projects/bus-booking/index.html" class="project-link" target="_blank">View Project</a>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-image" style="background-image: url('./projects/quiz-Maste/quizweb.png');"></div>
-                <div class="project-content">
-                    <h3 class="project-title">
-                        <a href="./projects/quiz-Maste/index.html" target="_blank">Online Quiz Website</a>
-                    </h3>
-                    <p class="project-description">
-                        This is a fully interactive frontend quiz application built using HTML, CSS, and JavaScript. It
-                        features two difficulty levels (basic and high), a countdown timer for each question, instant
-                        answer validation with color feedback, and a dynamic score display at the end.
-                    </p>
-                    <a href="./projects/quiz-Maste/index.html" class="project-link" target="_blank">View Project</a>
-                </div>
-            </div>
-            <div class="project-card animate-on-scroll">
-                <div class="project-image"
-                    style="background-image: url('/projects/blood bank website//bloodbank.png');"></div>
-                <div class="project-content">
-                    <h3 class="project-title">
-                        <a href="/projects/blood bank website//index.html" target="_blank">Blood Bank Website</a>
-                    </h3>
-                    <p class="project-description">
-                        A responsive Blood Bank website designed to facilitate user registration, donor login, and
-                        streamlined blood donation management. Built using HTML, CSS, JavaScript, and optionally
-                        PHP/MySQL, the site allows users to register as donors, log in securely, and access
-                        donation-related information.
-                    </p>
-                    <a href="/projects/blood bank website//index.html" class="project-link" target="_blank">View
-                        Project</a>
+                <div class="hero-image fade-in">
+                    <div class="profile-container">
+                        <!-- Replace with your actual profile picture -->
+                        <img src="photo.jpeg" alt="Gajendra Singh" class="profile-img">
+                        <div class="profile-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="tech-badge badge-1">
+                            <i class="fas fa-robot badge-icon"></i>
+                            <div>AI Specialist</div>
+                        </div>
+                        <div class="tech-badge badge-2">
+                            <i class="fas fa-code badge-icon"></i>
+                            <div>Full-Stack</div>
+                        </div>
+                        <div class="tech-badge badge-3">
+                            <i class="fas fa-mobile-alt badge-icon"></i>
+                            <div>Android Dev</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Internships Section -->
-    <section class="internships" id="internships">
-        <h2>Internships</h2>
-        <div class="timeline">
-
-            <div class="timeline-item animate-on-scroll">
-                <h3>IBM SkillsBuild (Online)</h3>
-                <p>Intern – Data Analytics Using Python | Jan 2024</p>
-                <p>Learned how to collect, analyze, and visualize data using Python libraries like Pandas and
-                    Matplotlib. Gained insights into making data-driven decisions through real-world case studies.</p>
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Internships</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
             </div>
-
-            <div class="timeline-item animate-on-scroll">
-                <h3>IBM (Online)</h3>
-                <p>Intern – Cybersecurity Essentials | Dec 2023</p>
-                <p>Understood key concepts of cybersecurity including threats, vulnerabilities, and network protection
-                    techniques. Developed a foundational skill set for ethical hacking and digital defense.</p>
-            </div>
-
-            <div class="timeline-item animate-on-scroll">
-                <h3>IBM (Online)</h3>
-                <p>Virtual Internship – Frontend Web Development | Oct 2023</p>
-                <p>Built responsive UI components using HTML, CSS, and JavaScript. Worked on real-time tasks involving
-                    Bootstrap and form validation with mentor feedback.</p>
-            </div>
-
-            <!-- Add more internships here if needed -->
-
         </div>
     </section>
 
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Technical Skills</h2>
+                <div class="subtitle">My diverse skill set spans across AI development, full-stack web, and mobile platforms</div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-card fade-in">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3>AI & Specialization</h3>
+                            <p>Intelligent solutions with modern AI tools</p>
+                        </div>
+                    </div>
+                    <p>Developing chatbots and AI-powered applications using Ollama, Python, and data analytics techniques.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Ollama</span>
+                        <span class="tag">Chatbot Development</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Analytics</span>
+                        <span class="tag">Cybersecurity</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <h3>Full-Stack Development</h3>
+                            <p>End-to-end web applications</p>
+                        </div>
+                    </div>
+                    <p>Building complete web solutions from frontend to backend with databases and APIs.</p>
+                    <div class="skill-tags">
+                        <span class="tag">HTML/CSS/JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Git/GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Android & Tools</h3>
+                            <p>Mobile apps & development tools</p>
+                        </div>
+                    </div>
+                    <p>Creating Android applications and using modern development tools efficiently.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Android Studio</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Agile/Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" style="background: rgba(15, 23, 42, 0.5);">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Experience & Internships</h2>
+                <div class="subtitle">My professional journey through internships and hands-on projects</div>
+            </div>
+            <div class="experience-container">
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <span class="timeline-date">Jan 2026 - Present</span>
+                        <div class="company">Codec Technologies India</div>
+                        <div class="role">Full Stack Developer</div>
+                        <div class="timeline-content">
+                            Working on full-stack web applications using modern technologies. Contributing to both frontend and backend development in a remote team environment.
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <span class="timeline-date">Oct - Nov 2025</span>
+                        <div class="company">Oasis Infobyte</div>
+                        <div class="role">Android App Development Intern</div>
+                        <div class="timeline-content">
+                            Developed Android applications using Kotlin. Gained hands-on experience in mobile app development lifecycle and UI/UX principles.
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <span class="timeline-date">Jun - Sep 2025</span>
+                        <div class="company">Unified Mentor Private Limited</div>
+                        <div class="role">Frontend Web Developer Intern</div>
+                        <div class="timeline-content">
+                            Built responsive web interfaces using HTML, CSS, and JavaScript. Collaborated on client projects and improved website performance.
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <span class="timeline-date">Dec 2024 - Jun 2025</span>
+                        <div class="company">IBM SkillsBuild</div>
+                        <div class="role">Data Analytics Intern</div>
+                        <div class="timeline-content">
+                            Completed intensive training in "Data Analytics: Turning Data into Decisions Using Python". Learned data processing, visualization, and analytical techniques.
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <span class="timeline-date">Oct 2024 - Jun 2025</span>
+                        <div class="company">IBM</div>
+                        <div class="role">Cybersecurity Fundamentals</div>
+                        <div class="timeline-content">
+                            Completed cybersecurity training covering network security, encryption, threat analysis, and security best practices for web applications.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Featured Projects</h2>
+                <div class="subtitle">A selection of my best work showcasing diverse technical capabilities</div>
+            </div>
+            <div class="projects-filter" id="projectFilter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ai">AI & Chatbot</button>
+                <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+                <button class="filter-btn" data-filter="android">Web & Android</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+                <div class="subtitle">Let's discuss opportunities, projects, or just say hello!</div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <p>I'm actively seeking internship and full-time opportunities in software development. Feel free to reach out for collaborations or just to connect!</p>
+                    <div class="contact-details">
+                        <div class="contact-item" id="emailContact" onclick="openEmail()">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>gs9668906@gmail.com</p>
+                                <small style="color: var(--primary);">Click to email me</small>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 7877537340</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Chittorgarh, Rajasthan, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-  <div class="footer-container">
-    <p>&copy; 2025 Gajendra Singh. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#home">Home</a> |
-      <a href="#projects">Projects</a> |
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-social">
-      <a href="https://github.com/TheGajendra" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/gajendra-singh-832786284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-</footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Gajendra Singh</div>
+                    <p>Aspiring Software Engineer specializing in Full-Stack Web Development and AI integration. Passionate about creating scalable, user-focused digital solutions.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/gajendra-" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/TheGajendra" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:gs9668906@gmail.com" class="social-link" id="footerEmail">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://thegajendra.github.io/" class="social-link" target="_blank">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li><a href="#projects">AI & Chatbot</a></li>
+                        <li><a href="#projects">Full-Stack Web</a></li>
+                        <li><a href="#projects">Android Development</a></li>
+                        <li><a href="#projects">Data Analytics</a></li>
+                        <li><a href="#projects">Cybersecurity</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Gajendra Singh. All Rights Reserved.</p>
+                <p>Aspiring Software Engineer | Full-Stack Developer | AI Enthusiast</p>
+            </div>
+        </div>
+    </footer>
 
 
 
